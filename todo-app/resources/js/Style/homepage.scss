@@ -1,0 +1,135 @@
+
+
+// Variables
+$primary-color: #4CAF50;
+$primary-color-hover: #45a049;
+$background-color: #f5f5f5;
+$text-color: #333;
+$border-color: #ccc;
+
+// Mixins
+@mixin button-style {
+  background-color: $primary-color;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $primary-color-hover;
+  }
+}
+
+// Global styles
+body {
+  font-family: Arial, sans-serif;
+  background-color: $background-color;
+  color: $text-color;
+}
+
+
+.todo-app {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+
+      .title {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      .subtitle {
+        font-size: 16px;
+        color: #666;
+      }
+    }
+
+    .auth-buttons {
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .auth-button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      margin-right: 10px;
+
+      &:hover {
+        background-color: #45a049;
+      }
+
+      &.logout-button {
+        background-color: #f44336;
+
+        &:hover {
+          background-color: #d32f2f;
+        }
+      }
+    }
+
+    .user-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .todo-form {
+      display: flex;
+      margin-bottom: 20px;
+
+      .todo-input {
+        flex-grow: 1;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px 0 0 3px;
+      }
+
+      .add-button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 0 3px 3px 0;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #45a049;
+        }
+      }
+    }
+
+    .todo-list {
+      list-style-type: none;
+      padding: 0;
+
+      .todo-item {
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: #f0f0f0;
+        }
+
+        &.completed {
+          text-decoration: line-through;
+          color: #888;
+        }
+      }
+    }
+  }
